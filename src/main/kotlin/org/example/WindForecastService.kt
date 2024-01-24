@@ -11,7 +11,10 @@ class WindForecastService(
 
     private val json = Json { ignoreUnknownKeys = true }
 
-    fun getWindyDays(): List<Date> {
+    /**
+     * A windy session is time when the wind is more that 5 m/s and the gust is more than 10 m/s
+     */
+    fun getWindySession(): List<Date> {
         val jsonStr = weatherHttpClient.getWindForecast("Tel Aviv")
 
         val weatherModel: WeatherModel = json.decodeFromString(jsonStr)
