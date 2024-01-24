@@ -7,6 +7,6 @@ fun main() {
         weatherHttpClient = WeatherHttpClientMock()
     )
 
-    val windyDays = windForecastManager.getWindyDays()
+    val windyDays = windForecastManager.getWindySession()
 
 }
